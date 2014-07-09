@@ -8,14 +8,18 @@
  */
 #include "headers/base.h"
 
-void println(char *line){
+void println(char * line){
     printf("%s\n", line);
 }
 
 void printChapter(char * param) {
-    printf("CHAPTER: %s\n", param);  
+    char string[20] = " CHAPTER: ";
+    strcat(string, param);
+    logInfo(string);
 }
 
 void printPart(char * param){
-    printf("> Part: %s\n", param);
+    char string[20] = "> Part: ";
+    strcat(string, param);
+    logInfo(param);
 }
