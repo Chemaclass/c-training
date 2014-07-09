@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ############################
-# COMPILAR Y EJECUTAR      #
+# COMPILE AND EXECUTE      #
 #                          #
 # by @Chemaclass           #
 ############################
@@ -11,9 +11,13 @@ std="c11"
 
 function __main__ {    
     if [ $1 ]; then
-        # compilamos
+        # if not exists directory, we must create
+        if [ ! -d bin ]; then
+            mkdir ./bin
+        fi 
+        # compile
         gcc -Wall -std=$std $baseFile -o ./bin/$1 ./src/$1.c 
-        # ejecutamos
+        # execute
         ./bin/$1
     else
         echo "?>> Help: $0 <programName>"
