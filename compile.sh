@@ -17,8 +17,12 @@ function __main__ {
         fi 
         # compile
         gcc -Wall -std=$std $baseFile -o ./bin/$1 ./src/$1.c 
-        # execute
-        ./bin/$1
+        # execute if exists
+        if [ -f ./bin/$1 ]; then
+            ./bin/$1
+        else
+            echo "Doesn't exist the executable $1"
+        fi
     else
         echo "?>> Help: $0 <programName>"
     fi
