@@ -3,3 +3,5 @@ bin
 
 # Object files
 *.o
+src/test.c
+src/headers/test.h
