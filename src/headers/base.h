@@ -25,12 +25,13 @@
 #define RESET "\033[0m"
 
 // Logs
-#define logDefault(str) printf("%s %s %s\n",ANSI_COLOR_MAGENTA,str,RESET)
-#define logInfo(str) printf("%s %s %s\n",ANSI_COLOR_BLUE,str,RESET)
-#define logSuccess(str) printf("%s %s %s\n",ANSI_COLOR_GREEN,str,RESET)
-#define logWarning(str) printf("%s %s %s\n",ANSI_COLOR_YELLOW,str,RESET)
-#define logError(str) printf("%s %s %s\n",ANSI_COLOR_RED,str,RESET)
+#define logDefault(str) printf("%s%s%s\n",ANSI_COLOR_MAGENTA,str,RESET)
+#define logInfo(str) printf("%s %s%s\n",ANSI_COLOR_BLUE,str,RESET)
+#define logSuccess(str) printf("%s%s%s\n",ANSI_COLOR_GREEN,str,RESET)
+#define logWarning(str) printf("%s%s%s\n",ANSI_COLOR_YELLOW,str,RESET)
+#define logError(str) printf("%s%s%s\n",ANSI_COLOR_RED,str,RESET)
 
+void println(char *line);
 void printChapter(char * str);
 void printPart(char * str);
 

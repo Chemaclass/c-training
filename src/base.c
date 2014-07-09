@@ -8,11 +8,14 @@
  */
 #include "headers/base.h"
 
-void printChapter(char * str){    
-    logSuccess(strcat("CHAPTER: ", str));
+void println(char *line){
+    printf("%s\n", line);
 }
 
-void printPart(char * str){
-    logInfo(strcat("> Part: ",str));
+void printChapter(char * param) {
+    printf("CHAPTER: %s\n", param);  
 }
 
+void printPart(char * param){
+    printf("> Part: %s\n", param);
+}
