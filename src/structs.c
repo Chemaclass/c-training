@@ -11,5 +11,6 @@
 
 
 void structs(){
-    printChapter("Structs");    
+    printChapter("Structs");
+    
 }

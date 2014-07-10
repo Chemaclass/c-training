@@ -10,7 +10,7 @@
 #include "headers/structs.h"
 
 int main(int argc, char *argv[]) {
-    logSuccess("Hello world!");
+    logSuccess("C Programming Language");
     structs();
     return 0;
 }
