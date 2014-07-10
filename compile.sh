@@ -7,7 +7,7 @@
 ############################
 
 baseFile="./src/base.c"
-std="c11"
+std="c99"
 
 function __main__ {    
     if [ $1 ]; then
