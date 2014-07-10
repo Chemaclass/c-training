@@ -1,5 +1,5 @@
 /*
- * main.c 1.0 2014/07/10  
+ * structs.c 1.0 2014/07/10  
  *
  * Copyright (c) 2014 @Chemaclass
  * José María Valera Reales <chemaclass@outlook.es>
@@ -9,8 +9,7 @@
 #include "headers/base.h"
 #include "headers/structs.h"
 
-int main(int argc, char *argv[]) {
-    logSuccess("Hello world!");
-    structs();
-    return 0;
+
+void structs(){
+    printChapter("Structs");    
 }
