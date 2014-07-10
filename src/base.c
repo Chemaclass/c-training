@@ -1,7 +1,7 @@
 /*
- * base.c 1.0 2014/07/09 Chemaclass
+ * base.c 1.0 2014/07/09 
  *
- * Copyright (c) 2014
+ * Copyright (c) 2014 @Chemaclass
  * José María Valera Reales <chemaclass@outlook.es>
  *
  * This code is free software.
