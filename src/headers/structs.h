@@ -9,9 +9,8 @@
 #ifndef STRUCTS_HEADER
 #define STRUCTS_HEADER
 
-void structs();
+void structsMain();
   
 
 #endif
-
 

@@ -11,6 +11,7 @@
 
 int main(int argc, char *argv[]) {
     logSuccess("C Programming Language");
-    structs();
+    structsMain();
     return 0;
 }
+
