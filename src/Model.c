@@ -1,28 +1,32 @@
 #include "headers/Model_Internal.h"
 
-Model * mallocNewModel() {
+Model * _mallocNewModel() {
 	return (Model*) malloc(sizeof(Model));
 }
 
 //Constructor
 Model * ModelCreateEmpty() {
-	Model * newModel = mallocNewModel();
-	ModelInicialize(newModel, 0);
+	Model * newModel = _mallocNewModel();
+	_ModelInicialize(newModel, 0);
 	return newModel;
 }
 
 Model * ModelCreate(int id) {
-	Model * newModel = mallocNewModel();
-	ModelInicialize(newModel, id);
+	Model * newModel = _mallocNewModel();
+	_ModelInicialize(newModel, id);
 	return newModel;
 }
 
-void ModelInicialize(Model *this, int id) {
-	this->id = id;
+void _ModelInicialize(Model *this, int id) {
+	this->_id = id;
 }
 
 void ModelSetId(Model *this, int id) {
-	this->id = id;
+	this->_id = id;
+}
+
+int ModelGetId(const Model *this) {
+	return this->_id;
 }
 
 void ModelFree(Model *this) {
@@ -30,5 +34,5 @@ void ModelFree(Model *this) {
 }
 
 void ModelToString(const Model *this) {
-    printf("Model {.id: %d}\n", this->id);
+    printf("Model {.id: %d}\n", this->_id);
 }

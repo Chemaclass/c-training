@@ -1,23 +1,23 @@
 #include "headers/Human_Internal.h"
 
-Human * mallocNewHuman() {
+Human * _mallocNewHuman() {
 	return (Human*) malloc(sizeof(Human));
 }
 
 Human * HumanCreateEmpty() {
-	Human *newHuman = mallocNewHuman();
-	HumanInitialize(newHuman, 0, 0, "");
+	Human *newHuman = _mallocNewHuman();
+	_HumanInitialize(newHuman, 0, 0, "");
 	return newHuman;
 }
 
 Human * HumanCreate(int id, int age, char* name) {
-	Human *newHuman = mallocNewHuman();
-	HumanInitialize(newHuman, id, age, name);
+	Human *newHuman = _mallocNewHuman();
+	_HumanInitialize(newHuman, id, age, name);
 	return newHuman;
 }
 
-void HumanInitialize(Human *this, int id, int age, char*name) {
-	ModelInicialize((Model *)this, id);
+void _HumanInitialize(Human *this, int id, int age, char*name) {
+	_ModelInicialize((Model *)this, id);
 	this->age = age;
 	this->name = name;
 }

@@ -11,7 +11,7 @@ typedef struct {
 	char *name;
 } Human;
 
-Human * mallocNewHuman();
+Human * _mallocNewHuman();
 
-void HumanInitialize(Human *this, int id, int age, char *name);
+void _HumanInitialize(Human *this, int id, int age, char *name);
 

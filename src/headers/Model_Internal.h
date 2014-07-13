@@ -4,10 +4,10 @@
 #include <stdio.h>
 
 typedef struct {
-	int id;
+	int _id;
 } Model;
 
-Model * mallocNewModel();
+Model * _mallocNewModel();
 
-void ModelInicialize(Model *this, int id);
+void _ModelInicialize(Model *this, int id);
 
