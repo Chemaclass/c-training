@@ -35,8 +35,9 @@ function main {
     if [ ! -d $dirBin ]; then
         mkdir $dirBin
     fi 
+    rm $dirBin/$mainFile
     # compile
-    gcc -Wall -std=$std $allSrcFiles -o $dirBin/$mainFile
+    gcc -std=$std $allSrcFiles -o $dirBin/$mainFile -Wall
     # execute if exists
     if [ -f $dirBin/$mainFile ]; then
         $dirBin/$mainFile
