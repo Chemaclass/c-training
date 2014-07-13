@@ -45,5 +45,5 @@ void HumanFree(Human *this) {
 }
 
 void HumanToString(const Human *this) {
-    printf("Human {.name: %s, .age: %d}\n", this->_name, this->_age);
+    printf("Human {name: %s, age: %d}\n", this->_name, this->_age);
 }

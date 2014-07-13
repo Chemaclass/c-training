@@ -35,5 +35,5 @@ void ModelFree(Model *this) {
 }
 
 void ModelToString(const Model *this) {
-    printf("Model {.id: %d}\n", this->_id);
+    printf("Model {id: %d}\n", this->_id);
 }

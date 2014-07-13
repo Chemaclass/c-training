@@ -34,5 +34,14 @@ void structsMain(){
     Human * h4 = HumanCreate(1, 17, "Ángel");
     HumanToString(h4);
     HumanFree(h4);
+    
+    // 5th, set and get
+    Human * h5 = HumanCreateEmpty();
+    HumanSetAge(h5, 15);
+    HumanSetName(h5, "Lola");
+    HumanToString(h5);
+    
+    printf("Getters ex.: name=%s, age=%d\n", HumanGetName(h5), HumanGetAge(h5));
+    HumanFree(h5);
 }
 
