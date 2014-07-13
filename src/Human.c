@@ -1,15 +1,17 @@
-#include "headers/Human_Internal.h"
+#include "headers/Human.h"
 
 Human * _mallocNewHuman() {
 	return (Human*) malloc(sizeof(Human));
 }
 
+// Empty Constructor
 Human * HumanCreateEmpty() {
 	Human *newHuman = _mallocNewHuman();
 	_HumanInitialize(newHuman, 0, 0, "");
 	return newHuman;
 }
 
+// Constructor with params
 Human * HumanCreate(int id, int age, char* name) {
 	Human *newHuman = _mallocNewHuman();
 	_HumanInitialize(newHuman, id, age, name);
@@ -18,16 +20,24 @@ Human * HumanCreate(int id, int age, char* name) {
 
 void _HumanInitialize(Human *this, int id, int age, char*name) {
 	_ModelInicialize((Model *)this, id);
-	this->age = age;
-	this->name = name;
+	this->_age = age;
+	this->_name = name;
 }
 
 void HumanSetAge(Human *this, int age) {
-	this->age = age;
+	this->_age = age;
+}
+
+int HumanGetAge(const Human *this){
+	return this->_age;
 }
 
 void HumanSetName(Human *this, char *name) {
-	this->name = name;
+	this->_name = name;
+}
+
+char *HumanGetName(const Human *this){
+	return this->_name;
 }
 
 void HumanFree(Human *this) {
@@ -35,5 +45,5 @@ void HumanFree(Human *this) {
 }
 
 void HumanToString(const Human *this) {
-    printf("Human {.name: %s, .age: %d}\n", this->name, this->age);
+    printf("Human {.name: %s, .age: %d}\n", this->_name, this->_age);
 }

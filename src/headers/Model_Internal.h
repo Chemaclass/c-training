@@ -1,7 +1,7 @@
 #pragma once
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h> // neccesary for example for free()
+#include <stdio.h> // for example toString()
 
 typedef struct {
 	int _id;

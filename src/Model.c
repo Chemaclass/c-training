@@ -1,16 +1,17 @@
-#include "headers/Model_Internal.h"
+#include "headers/Model.h"
 
 Model * _mallocNewModel() {
 	return (Model*) malloc(sizeof(Model));
 }
 
-//Constructor
+// Empty Constructor
 Model * ModelCreateEmpty() {
 	Model * newModel = _mallocNewModel();
 	_ModelInicialize(newModel, 0);
 	return newModel;
 }
 
+// Constructor with params
 Model * ModelCreate(int id) {
 	Model * newModel = _mallocNewModel();
 	_ModelInicialize(newModel, id);

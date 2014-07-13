@@ -15,18 +15,18 @@ void structsMain(){
     
     // First method of construct
     Human h;
-    h.age = 21;
-    h.name = "Chema";
+    h._age = 21;
+    h._name = "Chema";
 	HumanToString(&h);
     
     // Second
-    Human h2 = { .name = "Juan", .age = 20 };
+    Human h2 = { ._name = "Juan", ._age = 20 };
     HumanToString(&h2);
     
     // Third
     Human * h3 = HumanCreateEmpty();
-    h3->name = "Jesus";
-    h3->age = 18;
+    h3->_name = "Jesus";
+    h3->_age = 18;
     HumanToString(h3);
     HumanFree(h3);
     
@@ -35,6 +35,4 @@ void structsMain(){
     HumanToString(h4);
     HumanFree(h4);
 }
-
-
 
