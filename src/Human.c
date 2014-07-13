@@ -1,13 +1,17 @@
 #include "headers/Human_Internal.h"
 
+Human * mallocNewHuman() {
+	return (Human*) malloc(sizeof(Human));
+}
+
 Human * HumanCreateEmpty() {
-	Human *newHuman = (Human*) malloc(sizeof(Human));
+	Human *newHuman = mallocNewHuman();
 	HumanInitialize(newHuman, 0, 0, "");
 	return newHuman;
 }
 
 Human * HumanCreate(int id, int age, char* name) {
-	Human *newHuman = (Human*) malloc(sizeof(Human));
+	Human *newHuman = mallocNewHuman();
 	HumanInitialize(newHuman, id, age, name);
 	return newHuman;
 }

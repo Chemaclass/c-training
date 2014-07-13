@@ -4,13 +4,14 @@
 #include <stdio.h>
 
 #include "Model_Internal.h"
-#include "Human.h"
 
-struct human {
+typedef struct {
 	Model base;
 	int age;
 	char *name;
-};
+} Human;
+
+Human * mallocNewHuman();
 
 void HumanInitialize(Human *this, int id, int age, char *name);
 

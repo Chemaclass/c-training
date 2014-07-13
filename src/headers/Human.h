@@ -1,6 +1,6 @@
 #pragma once
 
-typedef struct human Human;
+#include "Human_Internal.h"
 
 Human *HumanCreateEmpty();
 Human *HumanCreate(int id, int age, char *name);

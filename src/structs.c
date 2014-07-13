@@ -8,7 +8,7 @@
  */
 #include "headers/base.h"
 #include "headers/structs.h"
-#include "headers/Human_Internal.h"
+#include "headers/Human.h"
 
 void structsMain(){
     printChapter("Structs");
@@ -18,17 +18,19 @@ void structsMain(){
     h.age = 21;
     h.name = "Chema";
 	HumanToString(&h);
-     // Second
+    
+    // Second
     Human h2 = { .name = "Juan", .age = 20 };
     HumanToString(&h2);
-     // Third
+    
+    // Third
     Human * h3 = HumanCreateEmpty();
     h3->name = "Jesus";
     h3->age = 18;
     HumanToString(h3);
     HumanFree(h3);
     
-     // Third
+    // Fourth
     Human * h4 = HumanCreate(1, 17, "Ángel");
     HumanToString(h4);
     HumanFree(h4);
