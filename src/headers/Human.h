@@ -2,6 +2,7 @@
 
 typedef struct human Human;
 
+Human *HumanCreateEmpty();
 Human *HumanCreate(int id, int age, char *name);
 
 void HumanSetAge(Human *this, int age);

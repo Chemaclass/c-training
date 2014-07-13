@@ -1,5 +1,11 @@
 #include "headers/Human_Internal.h"
 
+Human * HumanCreateEmpty() {
+	Human *newHuman = (Human*) malloc(sizeof(Human));
+	HumanInitialize(newHuman, 0, 0, "");
+	return newHuman;
+}
+
 Human * HumanCreate(int id, int age, char* name) {
 	Human *newHuman = (Human*) malloc(sizeof(Human));
 	HumanInitialize(newHuman, id, age, name);

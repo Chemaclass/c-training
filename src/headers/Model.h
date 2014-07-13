@@ -2,7 +2,8 @@
 
 typedef struct model Model;
 
-Model * ModelCreate(int id);
+Model *ModelCreateEmpty();
+Model *ModelCreate(int id);
 
 void ModelSetId(Model *this, int id);
 
