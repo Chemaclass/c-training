@@ -8,10 +8,12 @@
  */
 #include "headers/base.h"
 #include "headers/structs.h"
+#include "headers/lists.h"
 
 int main(int argc, char *argv[]) {
     logSuccess("C Programming Language");
     structsMain();
+    listsMain();
     return 0;
 }
 
