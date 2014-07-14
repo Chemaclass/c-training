@@ -4,25 +4,46 @@
 void listsMain(){
 	printChapter("Lists");
 	
-	List *list = (List*) malloc(sizeof(List));
-	ListInit(list);
+	List *list = ListCreate();
 	char str[50];
-	for(int i = 0; i < 10; i++) {
-		sprintf(str, "%d", i);
+	for(int i = 1; i < 10; i++) {
+		sprintf(str, "-%d", i);
 		ListPrepend(list, str);
 	}
-	for(int i = 1; i < 10; i++) {
+	for(int i = 0; i < 10; i++) {
 		sprintf(str, "%d", i);
 		ListAppend(list, str);
 	}
 	ListToString(list);
+	ListFree(list);
+	
+	List * list2 = ListCreate();
+	ListAppend(list2, "A");
+	ListAppend(list2, "B");
+	ListPrepend(list2, "C");
+	
+	ListToString(list2);
 }
 
 // Init
-void ListInit(List *list) {
+List * ListCreate() {
+	List * list = (List*) malloc(sizeof(List));
 	list->start = NULL;
 	list->end = NULL;
 	list->size = 0;
+	return list;
+}
+
+void ListFree(List *list){
+	Node *aux = list->start, *temp;
+	while ( aux != NULL ){
+		temp = aux;
+		free(aux->value);
+		free(aux);
+		aux = NULL;
+		aux = temp->next;
+		list->size--;
+	}
 }
 
 // Prepend
@@ -52,15 +73,24 @@ int ListAppend(List *list, char *value) {
 	if((newNode->value = (char*)malloc(50*sizeof(char))) == NULL) {
 		return -1;
 	}
-
+	
+	newNode->next = NULL;
 	strcpy(newNode->value, value);
 	
-	while (aux->next != NULL) {
-		aux = aux->next;
+	if(aux == NULL){
+	
+		list->start = newNode;
+		list->end = newNode;
+		
+	} else {
+	
+		while (aux->next != NULL) {
+			aux = aux->next;
+		}
+		aux->next = newNode;
 	}
 	
-	aux->next = newNode;
-	
+	list->size++;
 	return 0;
 }
 
@@ -72,6 +102,6 @@ void ListToString(List *list) {
 		printf("%s,", aux->value);
 		aux = aux->next;
 	}
-	printf("}\n");
+	printf("} .size:%d\n", list->size);
 }
 

@@ -12,8 +12,8 @@ typedef struct list {
 } List;
 
 void listsMain();
-void ListInit(List *list);
+List * ListCreate();
 int ListPrepend(List *list, char *value);
 int ListAppend(List *list, char *value);
 void ListToString(List *list);
-
+void ListFree(List *list);
